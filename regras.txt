@@ -1,0 +1,52 @@
+REGRAS
+
+1 - As variáveis só podem ser declaradas apenas uma vez (erro: VARIAVEL JA DECLARADA)
+2 - As variáveis só podem ser atribuidas após a declaração (erro: VARIAVEL NAO DECLARADA)
+3 - As variáveis só podem ser usadas após serem atribuidas (erro: VARIAVEL NAO ATRIBUIDA ANTERIORMENTE)
+4 - Expressões dentro de parenteses possuem prioridade
+
+
+COMANDOS PARA USAR O COMPILADOR
+
+bison -d min.y && flex min.flex && gcc min.tab.c lex.yy.c -lfl -o min && ./min < entrada.c
+as out.s -o out.o && ld out.o -o out && ./out
+echo $?
+
+
+EXEMPLOS DE ENTRADAS
+
+EXEMPLO 1
+
+int main(){
+
+	int x;
+	int y;                  <-- primeiro deve declarar as variáveis
+	int z;
+	int w;
+
+	y = 6+2;
+	z = 20-y;               <-- após declaração as variáveis, as mesmas podem ser atribuídas com expressões
+	x = 3+z+5;
+
+	int a;
+	a = 1;
+
+	w = 35 + (x - y + z) + 24;      <-- expressões dentro de parenteses possuem prioridade
+
+	return w - 3 - 6 - 7 + (22 + (2 - a));
+}
+
+EXEMPLO 2
+
+int main(){
+
+	int x;
+	int y;        <-- primeiro deve declarar as variáveis
+	int z;
+
+	z = 2;
+	z = 5+6+z;    <-- após declaração as variáveis, as mesmas podem ser atribuídas com expressões
+	x = 3+z-5;
+
+	return x+4-2;
+}

@@ -1,0 +1,8 @@
+lex.yy.c
+min
+min.tab.c
+min.tab.h
+out
+out.o
+out.s
+*.zip
