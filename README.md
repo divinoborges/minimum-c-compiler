@@ -1,4 +1,4 @@
-# Mini Compiler for a C Subset
+![Project Cover](cover.png)
 
 This project implements a simple compiler that parses a subset of the C language and generates x86-64 assembly code. It uses **Flex** for lexical analysis and **Bison** for syntax analysis.
 
@@ -101,3 +101,5 @@ int main() {
 - Errors are reported with the specific line and column where they occur.
 - The compiler ensures correct memory reservation and operation order based on the input.
 
+
+`
